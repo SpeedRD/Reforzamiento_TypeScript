@@ -1,13 +1,19 @@
+// bases/08-imp-exp.ts
 
-import { heroes, type Hero } from '../data/heroes.data';
+import { heroes, type Hero, Owner } from '../data/heroes.data';
 
-// Función para buscar héroe por ID
-// Retorna un Hero o undefined si no lo encuentra
-export const getHeroById = ( id: number ): Hero | undefined => {
-    return heroes.find( hero => hero.id === id );
+// ... (previous getHeroById code) ...
+
+export const getHeroById = (id: number): Hero | undefined => {
+    return heroes.find(hero => hero.id === id);
 }
 
-// Pruebas mencionadas en el video
-console.log( getHeroById(1) ); // Batman
-console.log( getHeroById(2) ); // Spiderman
-console.log( getHeroById(7) ); // undefined
+// HOMEWORK SOLUTION
+// Filter heroes by Owner Enum
+export const getHeroesByOwner = (owner: Owner): Hero[] => {
+    return heroes.filter(hero => hero.owner === owner);
+}
+
+/* Short syntax mentioned in video (optional):
+   export const getHeroesByOwner = (owner: Owner) => heroes.filter(h => h.owner === owner);
+*/

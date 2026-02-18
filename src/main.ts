@@ -13,4 +13,14 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <h1>Hola Mundo</h1>
   </div>
 `
+import { getHeroesByOwner } from './bases/08-imp-exp';
+import { Owner } from './data/heroes.data'; // We need the Enum to call the function
+
+// Test: Get only Marvel heroes
+const marvelHeroes = getHeroesByOwner(Owner.Marvel);
+console.log(marvelHeroes); // [ {Spiderman...}, {Wolverine...} ]
+
+// Test: Get only DC heroes
+const dcHeroes = getHeroesByOwner(Owner.DC);
+console.log(dcHeroes); // [ {Batman...}, {Superman...}, {Flash...} ]
 

@@ -1,35 +1,41 @@
-// data/heroes.ts
+export const Owner = {
+    DC: 'DC',
+    Marvel: 'Marvel'
+} as const;
 
-export interface Hero { // <--- Se agregó export
+// This creates a Type based on the object above
+export type Owner = (typeof Owner)[keyof typeof Owner];
+
+export interface Hero {
     id: number;
     name: string;
-    owner: string;
+    owner: Owner;
 }
 
-export const heroes: Hero[] = [ // <--- Se agregó export
+export const heroes: Hero[] = [
     {
         id: 1,
         name: 'Batman',
-        owner: 'DC'
+        owner: Owner.DC
     },
     {
         id: 2,
         name: 'Spiderman',
-        owner: 'Marvel'
+        owner: Owner.Marvel
     },
     {
         id: 3,
         name: 'Superman',
-        owner: 'DC'
+        owner: Owner.DC
     },
     {
         id: 4,
         name: 'Flash',
-        owner: 'DC'
+        owner: Owner.DC
     },
     {
         id: 5,
         name: 'Wolverine',
-        owner: 'Marvel'
+        owner: Owner.Marvel
     },
 ];
