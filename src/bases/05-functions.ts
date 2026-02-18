@@ -29,3 +29,12 @@ const getUser2 = () => {
 const user = getUser()
 const user2 = getUser2()
 console.log(user, user2);
+
+//const myNumbers: number[] = [1, 2, 3, 4, 5];
+
+// myNumbers.forEach(function (value) {
+//     console.log({ value });
+// });
+// myNumbers.forEach((value) => {
+//     console.log(value);
+// });
